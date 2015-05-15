@@ -15,6 +15,9 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+	<!-- Font-Awesome -->
+    <link href="fonts/css/font-awesome.min.css" rel="stylesheet">    
+
     <!-- Custom styles for this template -->
     <link href="css/cover.css" rel="stylesheet">
 
@@ -37,7 +40,7 @@
 
       <div class="site-wrapper-inner">
 
-        <div class="cover-container">
+        <div class="cover-container" ng-controller="ColdMailerController as coldmailer">
 
           <div class="masthead clearfix">
             <div class="inner">
@@ -45,10 +48,11 @@
             </div>
           </div>
 
+
           <div class="inner cover">
             <h1 class="cover-heading">Looking to cold e-mail someone?<br>Let's find their address.</h1>
-            <p class="lead">ColdMailer is an elegant solution to help you guess someone's email if they haven't listed it on a public domain. Type their name and company below for some (well educated) guesses at their e-mail.</p>
-            <form ng-controller="InputController as input">
+            <p class="lead">ColdMailer is an simple tool to help you guess someone's email if they haven't listed it on a public domain. Type their name and company below for some (well educated) guesses at their e-mail.</p>
+            <form>
 	            <div class="row">
 		            <div class="col-md-4">
 		            	<p class="font-soft">First Name</p>
@@ -59,12 +63,15 @@
 		            	<input type="text" name="last-name">
 		            </div>
 		            <div class="col-md-4">
-		            	<p class="font-soft">Company</p>
+		            	<span>
+            				<p class="font-soft">Company Domain</p>
+            			</span>
 		            	<input type="text" name="company">
 		            </div>
 	            </div>
 	            <br>
-	            <button type="submit" class="btn btn-submit">Guess!</button>
+	            <p class="muted">Don't know a field? Leave it blank!</p>
+	            <button type="submit" class="btn btn-submit" ng-click="">Guess</button>
             </form>
           </div>
 
