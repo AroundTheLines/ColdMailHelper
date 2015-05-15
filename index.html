@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="coldMailer">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,10 +19,14 @@
     <link href="css/cover.css" rel="stylesheet">
 
     <!--Custom css for this project-->
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/coldmailer.css" rel="stylesheet">
 
     <!--Import angular early so that everything that needs to work works.-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/angular.min.js"></script>
+    <!--Custom javascript for this project-->
+    <script src="js/coldmailer.js"></script>
 
 
   </head>
@@ -41,24 +45,26 @@
             </div>
           </div>
 
-          <div class="inner cover" ng-app="ColdMail">
+          <div class="inner cover">
             <h1 class="cover-heading">Looking to cold e-mail someone?<br>Let's find their address.</h1>
-            <p class="lead">ColdMailer is an elegant solution to help you guess someone's email if they haven't listed it on a public domain. Type their name and company below and suggestions for their email will come up.</p>
-            <form>
+            <p class="lead">ColdMailer is an elegant solution to help you guess someone's email if they haven't listed it on a public domain. Type their name and company below for some (well educated) guesses at their e-mail.</p>
+            <form ng-controller="InputController as input">
 	            <div class="row">
 		            <div class="col-md-4">
 		            	<p class="font-soft">First Name</p>
-		            	<input type="text">
+		            	<input type="text" name="first-name">
 		            </div>
 		            <div class="col-md-4">
 		            	<p class="font-soft">Last Name</p>
-		            	<input type="text">
+		            	<input type="text" name="last-name">
 		            </div>
 		            <div class="col-md-4">
 		            	<p class="font-soft">Company</p>
-		            	<input type="text">
+		            	<input type="text" name="company">
 		            </div>
 	            </div>
+	            <br>
+	            <button type="submit" class="btn btn-submit">Guess!</button>
             </form>
           </div>
 
@@ -77,10 +83,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     
-    <!--Custom javascript for this project-->
-    <script src="js/custom.js"></script>
   </body>
 </html>
