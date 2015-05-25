@@ -12,6 +12,13 @@
 
     <title>ColdMailer</title>
 
+    <!--Import angular early so that everything that needs to work works.-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <!--Custom javascript for this project-->
+    <script src="js/coldmailer.js"></script>
+
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -24,23 +31,18 @@
     <!--Custom css for this project-->
     <link href="css/coldmailer.css" rel="stylesheet">
 
-    <!--Import angular early so that everything that needs to work works.-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/angular.min.js"></script>
-    <!--Custom javascript for this project-->
-    <script src="js/coldmailer.js"></script>
+
 
 
   </head>
 
   <body>
 
-    <div class="site-wrapper">
+    <div class="site-wrapper" ng-controller="ColdMailerController as coldmailer">
 
       <div class="site-wrapper-inner">
 
-        <div class="cover-container" ng-controller="ColdMailerController as coldmailer">
+        <div class="cover-container">
 
           <div class="masthead clearfix">
             <div class="inner">
@@ -52,29 +54,31 @@
           <div class="inner cover">
             <h1 class="cover-heading">Looking to cold e-mail someone?<br>Let's find their address.</h1>
             <p class="lead">ColdMailer is an simple tool to help you guess someone's email if they haven't listed it on a public domain. Type their name and company below for some (well educated) guesses at their e-mail.</p>
-            <form>
+            <form id="email-form" ng-submit="" novalidate>
 	            <div class="row">
 		            <div class="col-md-4">
 		            	<p class="font-soft">First Name</p>
-		            	<input type="text" name="first-name">
+		            	<input type="text" name="first-name" placeholder="First Name" ng-model="coldmailer.firstName">
 		            </div>
 		            <div class="col-md-4">
 		            	<p class="font-soft">Last Name</p>
-		            	<input type="text" name="last-name">
+		            	<input type="text" name="last-name" placeholder="Last Name" ng-model="coldmailer.lastName">
 		            </div>
 		            <div class="col-md-4">
 		            	<span>
             				<p class="font-soft">Company Domain</p>
             			</span>
-		            	<input type="text" name="company">
+		            	<input type="text" name="company-domain" placeholder="Company Domain" ng-model="coldmailer.company">
 		            </div>
 	            </div>
 	            <br>
 	            <p class="muted">Don't know a piece of information? Leave it blank!</p>
-	            <button type="submit" class="btn btn-submit" ng-click="">Guess</button>
+	            <button type="submit" class="btn btn-submit" value="submit">Guess</button>
             </form>
           </div>
+
           <div>-insert emails here-</div>
+
           <div class="mastfoot">
             <div class="inner">
             

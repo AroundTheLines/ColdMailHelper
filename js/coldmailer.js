@@ -2,8 +2,8 @@
 
 	var app = angular.module('coldMailer',[]);
 
-	app.controller("InputController",function(){
-
+	app.controller("ColdMailerController",function(){
+		this.text="hi"
 	});
 
 })();
