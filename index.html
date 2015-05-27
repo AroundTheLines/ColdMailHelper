@@ -35,9 +35,9 @@
 
   </head>
 
-  <body>
+  <body ng-controller="ColdMailerController as coldCtrl">
 
-    <div class="site-wrapper" ng-controller="ColdMailerController as coldCtrl">
+    <div class="site-wrapper">
 
       <div class="site-wrapper-inner">
 
@@ -53,21 +53,21 @@
           <div class="inner cover">
             <h1 class="cover-heading">Looking to cold e-mail someone?<br>Let's find their address.</h1>
             <p class="lead">ColdMailer is an simple tool to help you guess someone's email if they haven't listed it on a public domain. Type their name and company below for some (well educated) guesses at their e-mail.</p>
-            <form id="email-form" ng-submit="coldCtrl.generate();" novalidate>
+            <form id="email-form" ng-submit="coldCtrl.pushInfo();" novalidate>
 	            <div class="row">
 		            <div class="col-md-4">
 		            	<p class="font-soft">First Name</p>
-		            	<input type="text" name="first-name" placeholder="First Name" ng-model="coldCtrl.coldmailer.fName">
+		            	<input type="text" name="first-name" placeholder="First Name" ng-model="coldCtrl.fName">
 		            </div>
 		            <div class="col-md-4">
 		            	<p class="font-soft">Last Name</p>
-		            	<input type="text" name="last-name" placeholder="Last Name" ng-model="coldCtrl.coldmailer.lName">
+		            	<input type="text" name="last-name" placeholder="Last Name" ng-model="coldCtrl.lName">
 		            </div>
 		            <div class="col-md-4">
 		            	<span>
             				<p class="font-soft">Company Domain</p>
             			</span>
-		            	<input type="text" name="company-domain" placeholder="Company Domain" ng-model="coldCtrl.coldmailer.cmpny">
+		            	<input type="text" name="company-domain" placeholder="Company Domain" ng-model="coldCtrl.cmpny">
 		            </div>
 	            </div>
 	            <br>
@@ -76,7 +76,7 @@
             </form>
           </div>
 
-          <div>First name: {{coldCtrl.coldmailer.fName}}<br>Last name: {{coldCtrl.coldmailer.lName}}<br>Company domain: {{coldCtrl.coldmailer.cmpny}}</div>
+          <div>First name: {{coldCtrl.fName}}<br>Last name: {{coldCtrl.lName}}<br>Company domain: {{coldCtrl.cmpny}}</div>
 
           <div class="mastfoot">
             <div class="inner">

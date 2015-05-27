@@ -3,13 +3,12 @@
 	var app = angular.module('coldMailer',[]);
 
 	app.controller("ColdMailerController",function(){
-		this.coldmailer = {};
+		var coldCtrl = this;
 
-		this.generate = function(){
-			identification.push(this.coldmailer);
-		};
+		coldCtrl.information = [];
+
+		coldCtrl.pushInfo = function(){
+			coldCtrl.information.push({firstname: coldCtrl.fName, lastname: coldCtrl.lName, company: coldCtrl.cmpny});
+		}
 	});
-
-	var identification = {coldmailer:{firstName}};
-
 })();
