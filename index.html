@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" ng-app="coldMailer">
   <head>
@@ -53,21 +52,21 @@
           <div class="inner cover">
             <h1 class="cover-heading">Looking to cold e-mail someone?<br>Let's find their address.</h1>
             <p class="lead">ColdMailer is an simple tool to help you guess someone's email if they haven't listed it on a public domain. Type their name and company below for some (well educated) guesses at their e-mail.</p>
-            <form id="email-form" ng-submit="coldCtrl.pushInfo();" novalidate>
+            <form id="email-form" ng-submit="coldCtrl.pushInfo()" novalidate>
 	            <div class="row">
 		            <div class="col-md-4">
 		            	<p class="font-soft">First Name</p>
-		            	<input type="text" name="first-name" placeholder="First Name" ng-model="coldCtrl.fName">
+		            	<input type="text" name="first-name" placeholder="First Name" ng-model="coldCtrl.information.fName">
 		            </div>
 		            <div class="col-md-4">
 		            	<p class="font-soft">Last Name</p>
-		            	<input type="text" name="last-name" placeholder="Last Name" ng-model="coldCtrl.lName">
+		            	<input type="text" name="last-name" placeholder="Last Name" ng-model="coldCtrl.information.lName">
 		            </div>
 		            <div class="col-md-4">
 		            	<span>
             				<p class="font-soft">Company Domain</p>
             			</span>
-		            	<input type="text" name="company-domain" placeholder="Company Domain" ng-model="coldCtrl.cmpny">
+		            	<input type="text" name="company-domain" placeholder="Company Domain" ng-model="coldCtrl.information.cmpny">
 		            </div>
 	            </div>
 	            <br>
@@ -76,7 +75,7 @@
             </form>
           </div>
 
-          <div>First name: {{coldCtrl.fName}}<br>Last name: {{coldCtrl.lName}}<br>Company domain: {{coldCtrl.cmpny}}</div>
+          <div>First name: {{coldCtrl.information.fName}}<br>Last name: {{coldCtrl.information.lName}}<br>Company domain: {{coldCtrl.information.cmpny}}</div>
 
           <div class="mastfoot">
             <div class="inner">

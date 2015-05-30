@@ -1,14 +1,14 @@
-(function(){
+(function(){//function wrapper, good form.
 
-	var app = angular.module('coldMailer',[]);
+	var app = angular.module('coldMailer',[]);//creates the angular module that lets this web app run angular
 
-	app.controller("ColdMailerController",function(){
-		var coldCtrl = this;
+	app.controller("ColdMailerController",function(){//controller for all of the functionality that'll be needed
+		var coldCtrl = this;//typing coldCtrl instead of "this" makes the code a lot more readable(and also useable)
 
-		coldCtrl.information = [];
+		coldCtrl.information = {};//new empty object
 
 		coldCtrl.pushInfo = function(){
-			coldCtrl.information.push({firstname: coldCtrl.fName, lastname: coldCtrl.lName, company: coldCtrl.cmpny});
+			coldCtrl.information.fName = angular.uppercase(coldCtrl.information.fName);
 		}
 	});
 })();
