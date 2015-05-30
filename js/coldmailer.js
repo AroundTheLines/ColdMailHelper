@@ -14,7 +14,8 @@
 			if(coldCtrl.information.cmpny != ""){
 				coldCtrl.addresses = [
 					coldCtrl.information.fName + "." + coldCtrl.information.lName + "@" + coldCtrl.information.cmpny,
-					coldCtrl.information.fName.substring(0,1) + coldCtrl.information.lName + "@" + coldCtrl.information.cmpny
+					coldCtrl.information.fName.substring(0,1) + coldCtrl.information.lName + "@" + coldCtrl.information.cmpny,
+					coldCtrl.information.fName + coldCtrl.information.lName.substring(0,1) + "@" + coldCtrl.information.cmpny
 				];
 			}
 		}
