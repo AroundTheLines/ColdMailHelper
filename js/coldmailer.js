@@ -10,10 +10,11 @@
 		coldCtrl.addresses = [];
 
 		coldCtrl.pushInfo = function(){
+			coldCtrl.clicked = true;
 			if(coldCtrl.information.cmpny != ""){
-				coldCtrl.clicked = true;
 				coldCtrl.addresses = [
-					coldCtrl.information.fName + "." + coldCtrl.information.lName + "@" + coldCtrl.information.cmpny
+					coldCtrl.information.fName + "." + coldCtrl.information.lName + "@" + coldCtrl.information.cmpny,
+					coldCtrl.information.fName.substring(0,1) + coldCtrl.information.lName + "@" + coldCtrl.information.cmpny
 				];
 			}
 		}
