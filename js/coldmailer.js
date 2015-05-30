@@ -6,9 +6,16 @@
 		var coldCtrl = this;//typing coldCtrl instead of "this" makes the code a lot more readable(and also useable)
 
 		coldCtrl.information = {};//new empty object
+		coldCtrl.clicked = false;
+		coldCtrl.addresses = [];
 
 		coldCtrl.pushInfo = function(){
-			coldCtrl.information.fName = angular.uppercase(coldCtrl.information.fName);
+			if(coldCtrl.information.cmpny != ""){
+				coldCtrl.clicked = true;
+				coldCtrl.addresses = [
+					coldCtrl.information.fName + "." + coldCtrl.information.lName + "@" + coldCtrl.information.cmpny
+				];
+			}
 		}
 	});
 })();

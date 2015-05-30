@@ -75,7 +75,10 @@
             </form>
           </div>
 
-          <div>First name: {{coldCtrl.information.fName}}<br>Last name: {{coldCtrl.information.lName}}<br>Company domain: {{coldCtrl.information.cmpny}}</div>
+          <div ng-show="coldCtrl.clicked">
+            <p>First name: {{coldCtrl.information.fName}}<br>Last name: {{coldCtrl.information.lName}}<br>Company domain: {{coldCtrl.information.cmpny}}
+              <br> {{coldCtrl.addresses[0]}}</p>
+          </div>
 
           <div class="mastfoot">
             <div class="inner">
